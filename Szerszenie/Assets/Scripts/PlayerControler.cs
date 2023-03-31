@@ -15,6 +15,7 @@ public class PlayerControler : MonoBehaviour
     bool isRoofed = true;
     public Transform GroundCheck1;
     public Transform roofCheck1;
+    private bool m_FacingRight = true;
     public LayerMask groundLayer;
 
 
@@ -44,7 +45,17 @@ public class PlayerControler : MonoBehaviour
             if (isGrounded)
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
-   
+        if (h < 0 && !m_FacingRight)
+			{
+				// ... flip the player.
+				Flip();
+			}
+			// Otherwise if the input is moving the player left and the player is facing right...
+			else if (h > 0 && m_FacingRight)
+			{
+				// ... flip the player.
+				Flip();
+			}
 
     }
 
@@ -54,6 +65,13 @@ public class PlayerControler : MonoBehaviour
         
     }
 
-
+    private void Flip()
+	{
+        m_FacingRight = !m_FacingRight;
+		// Multiply the player's x local scale by -1.
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
+	}
 
 }
