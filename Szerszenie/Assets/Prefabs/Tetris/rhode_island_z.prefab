@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2222405610277980361}
   - component: {fileID: 2222405610277980360}
   - component: {fileID: 2222405610277980363}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rhode_island_z
   m_TagString: Untagged
   m_Icon: {fileID: 0}

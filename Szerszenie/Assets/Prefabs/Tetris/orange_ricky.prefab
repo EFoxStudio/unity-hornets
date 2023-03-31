@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7249564494710660821}
   - component: {fileID: 7249564494710660822}
   - component: {fileID: 7249564494710660823}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: orange_ricky
   m_TagString: Untagged
   m_Icon: {fileID: 0}

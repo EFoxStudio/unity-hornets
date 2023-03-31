@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6882469643731359276}
   - component: {fileID: 6882469643731359277}
   - component: {fileID: 6882469643731359266}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: blue_ricky
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4838703032465405167}
   - component: {fileID: 4838703032465405166}
   - component: {fileID: 4838703032465405165}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: teewee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
