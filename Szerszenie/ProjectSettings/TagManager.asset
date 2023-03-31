@@ -4,11 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enter
-  - GameOne
-  - GameTwo
-  - GameThree
-  - GameFour
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -16,7 +12,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - TetrisBlocks
   - 
   - 
   - 
