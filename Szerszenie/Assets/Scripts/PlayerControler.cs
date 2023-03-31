@@ -11,14 +11,13 @@ public class PlayerControler : MonoBehaviour
     public float speed;
     public float jumpForce;
     bool isGrounded = true;
+    bool isRoofed = true;
     public Transform GroundCheck1;
+    public Transform roofCheck1;
     public LayerMask groundLayer;
 
 
-    private void Start()
-    {
-        
-    }
+
 
     private void Update()
     {
@@ -27,19 +26,17 @@ public class PlayerControler : MonoBehaviour
         rb.velocity = movement;
 
         isGrounded = Physics2D.OverlapCircle(GroundCheck1.position, 0.05f, groundLayer);
+        isRoofed = Physics2D.OverlapCircle(roofCheck1.position, 0.05f, groundLayer);
+
+        if (isRoofed && isGrounded)
+            SceneManager.LoadScene("GameOver");
 
         if (Input.GetButtonDown("Jump"))
             if (isGrounded)
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
-   
-
-    }
-
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
         
+
     }
 
 
