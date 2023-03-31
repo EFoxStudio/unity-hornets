@@ -12,7 +12,9 @@ public class PlayerControler : MonoBehaviour
     public float jumpForce;
     public Animator animator;
     bool isGrounded = true;
+    bool isRoofed = true;
     public Transform GroundCheck1;
+    public Transform roofCheck1;
     public LayerMask groundLayer;
 
 
@@ -31,6 +33,11 @@ public class PlayerControler : MonoBehaviour
         rb.velocity = movement;
 
         isGrounded = Physics2D.OverlapCircle(GroundCheck1.position, 0.05f, groundLayer);
+        isRoofed = Physics2D.OverlapCircle(roofCheck1.position, 0.05f, groundLayer);
+
+        if (isRoofed && isGrounded)
+            SceneManager.LoadScene("GameOver");
+
         animator.SetBool("isJump", !isGrounded);
 
         if (Input.GetButtonDown("Jump"))
