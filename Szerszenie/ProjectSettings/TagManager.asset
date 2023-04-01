@@ -11,6 +11,7 @@ TagManager:
   - GameThree
   - GameTwo
   - questMan
+  - Coin
   layers:
   - Default
   - TransparentFX

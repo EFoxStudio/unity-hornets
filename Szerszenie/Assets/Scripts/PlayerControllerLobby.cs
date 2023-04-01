@@ -12,7 +12,6 @@ public class PlayerControllerLobby : MonoBehaviour
 
     float horizontal;
     float vertical;
-    bool startGame = true;
     public Animator animator;
     private bool m_FacingRight = true;
 

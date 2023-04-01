@@ -8,6 +8,10 @@ public class Interactions : MonoBehaviour
 
     bool startGame = true;
     public GameObject canvas;
+    public GameObject canvas2;
+    public GameObject electricyty;
+    public GameObject canvas3;
+
     public PlayerControllerLobby plctrl;
     // Start is called before the first frame update
     void Start()
@@ -47,23 +51,38 @@ public class Interactions : MonoBehaviour
         plctrl.enabled = true;
     }
 
+    IEnumerator GoodOldDays()
+    {
+        canvas2.SetActive(true);
+        plctrl.Stop();
+        plctrl.enabled = false;
+
+        yield return new WaitForSeconds(4f);
+        electricyty.SetActive(true);
+        canvas2.SetActive(false);
+        canvas3.SetActive(true);
+
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Tetris");
+    }
+
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "GameOne")
         {
-            SceneManager.LoadScene("FirstGame");
+            StartCoroutine("GoodOldDays");
         }
-        else if (other.gameObject.tag == "GameTwo")
-        {
-            SceneManager.LoadScene("SecondGame");
-        }
-        else if (other.gameObject.tag == "GameThree")
-        {
-            SceneManager.LoadScene("ThirdGame");
-        }
-        else if (other.gameObject.tag == "GameFour")
-        {
-            SceneManager.LoadScene("FourthGame");
-        }
+        //else if (other.gameObject.tag == "GameTwo")
+        //{
+        //    SceneManager.LoadScene("SecondGame");
+        //}
+        //else if (other.gameObject.tag == "GameThree")
+        //{
+        //    SceneManager.LoadScene("ThirdGame");
+        //}
+        //else if (other.gameObject.tag == "GameFour")
+        //{
+        //    SceneManager.LoadScene("FourthGame");
+        //}
     }
 }

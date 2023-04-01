@@ -24,4 +24,19 @@ public class GameController : MonoBehaviour
     {
         SceneManager.LoadScene("Tetris");
     }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void GoToInfo()
+    {
+        SceneManager.LoadScene("Info");
+    }
+
+    public void GoToLobby()
+    {
+        SceneManager.LoadScene("Lobby");
+    }
 }

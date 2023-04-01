@@ -18,12 +18,6 @@ public class PlayerControler : MonoBehaviour
     private bool m_FacingRight = true;
     public LayerMask groundLayer;
 
-
-    private void Start()
-    {
-        
-    }
-
     private void Update()
     {
         float h = Input.GetAxisRaw("Horizontal") * speed;
@@ -59,10 +53,21 @@ public class PlayerControler : MonoBehaviour
 
     }
 
-
+    public void Stop()
+    {
+        rb.velocity = Vector3.zero;
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Coin")
+        {
+            SceneManager.LoadScene("Lobby");
+        }
     }
 
     private void Flip()
