@@ -15,6 +15,7 @@ public class Pellet : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Pacman")) {
             Eat();
         }
+        
     }
 
 }
