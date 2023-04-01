@@ -17,6 +17,8 @@ public class PlayerControler : MonoBehaviour
     public Transform roofCheck1;
     private bool m_FacingRight = true;
     public LayerMask groundLayer;
+    [SerializeField] private AudioSource jumpingEffects;
+    [SerializeField] private AudioSource coinSound;
 
     private void Update()
     {
@@ -36,9 +38,10 @@ public class PlayerControler : MonoBehaviour
         animator.SetBool("isJump", !isGrounded);
 
         if (Input.GetButtonDown("Jump"))
-            if (isGrounded)
+            if (isGrounded){
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-
+                jumpingEffects.Play();
+            }
         if (h < 0 && !m_FacingRight)
 			{
 				// ... flip the player.
@@ -66,7 +69,8 @@ public class PlayerControler : MonoBehaviour
     {
         if (collision.tag == "Coin")
         {
-            SceneManager.LoadScene("Lobby");
+            coinSound.Play();
+            SceneManager.LoadScene("Win");
         }
     }
 

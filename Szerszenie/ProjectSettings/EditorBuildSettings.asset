@@ -11,16 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tetris.unity
     guid: 95028720b72b8d44eabb80f0e7fb2139
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/FirstGame.unity
     guid: bff75ded8bc634a47b1399a268db592e
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/SecondGame.unity
     guid: 86eff784ec978c5448f789b4473b767f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/ThirdGame.unity
     guid: 7ee35977eecf3c4449b7e755430cd503
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/FourthGame.unity
     guid: ab00560b11388c045a325c35828ea018
   - enabled: 1
@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: 7ff4c88ba02c71d47a89303a11b04ada
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: 52073996c445dcb40b1eae8f524bbe30
   m_configObjects: {}

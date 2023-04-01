@@ -11,6 +11,8 @@ public class Interactions : MonoBehaviour
     public GameObject canvas2;
     public GameObject electricyty;
     public GameObject canvas3;
+    public bool isTaken = false;
+    [SerializeField] private AudioSource changingLevel;
 
     public PlayerControllerLobby plctrl;
     // Start is called before the first frame update
@@ -35,6 +37,7 @@ public class Interactions : MonoBehaviour
         }
         else if (other.gameObject.tag == "questMan")
         {
+            isTaken = true;
             Debug.Log("Quest od typa");
         }
 
@@ -63,12 +66,13 @@ public class Interactions : MonoBehaviour
         canvas3.SetActive(true);
 
         yield return new WaitForSeconds(3f);
+        changingLevel.Play();
         SceneManager.LoadScene("Tetris");
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "GameOne")
+        if (other.gameObject.tag == "GameOne" && isTaken)
         {
             StartCoroutine("GoodOldDays");
         }
