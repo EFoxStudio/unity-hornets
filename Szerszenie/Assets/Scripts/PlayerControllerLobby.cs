@@ -10,6 +10,8 @@ public class PlayerControllerLobby : MonoBehaviour
 
     float horizontal;
     float vertical;
+    public Animator animator;
+    private bool m_FacingRight = true;
 
     public float runSpeed = 5.0f;
 
@@ -21,7 +23,22 @@ public class PlayerControllerLobby : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
+
+        animator.SetFloat("Speed", Mathf.Abs(horizontal*runSpeed));
+
         vertical = Input.GetAxisRaw("Vertical");
+
+        if(horizontal < 0 && !m_FacingRight)
+		{
+			// ... flip the player.
+			Flip();
+		}
+			// Otherwise if the input is moving the player left and the player is facing right...
+			else if (horizontal > 0 && m_FacingRight)
+			{
+				// ... flip the player.
+				Flip();
+			}
     }
 
     private void FixedUpdate()
@@ -57,5 +74,14 @@ public class PlayerControllerLobby : MonoBehaviour
             SceneManager.LoadScene("FourthGame");
         }
     }
+
+    private void Flip()
+	{
+        m_FacingRight = !m_FacingRight;
+		// Multiply the player's x local scale by -1.
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
+	}
 
 }
