@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - GameOne
+  - Enter
+  - GameFour
+  - GameThree
+  - GameTwo
+  - questMan
   layers:
   - Default
   - TransparentFX
@@ -11,11 +18,11 @@ TagManager:
   - 
   - Water
   - UI
-  - Pacman
-  - Ghost
-  - Pellet
-  - Obstacle
-  - Node
+  - TetrisBlocks
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
