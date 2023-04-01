@@ -6,24 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/GameOver.unity
-    guid: a7dbbd5a518943448a18c65bc04cacef
-  - enabled: 1
-    path: Assets/Scenes/Tetris.unity
-    guid: 95028720b72b8d44eabb80f0e7fb2139
-  - enabled: 1
-    path: Assets/Scenes/FirstGame.unity
-    guid: bff75ded8bc634a47b1399a268db592e
-  - enabled: 1
-    path: Assets/Scenes/SecondGame.unity
-    guid: 86eff784ec978c5448f789b4473b767f
-  - enabled: 1
-    path: Assets/Scenes/ThirdGame.unity
-    guid: 7ee35977eecf3c4449b7e755430cd503
-  - enabled: 1
-    path: Assets/Scenes/FourthGame.unity
-    guid: ab00560b11388c045a325c35828ea018
-  - enabled: 1
-    path: Assets/Scenes/Lobby.unity
+    path: Assets/Scenes/Pacman.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
