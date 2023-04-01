@@ -23,6 +23,11 @@ public class PlayerControllerLobby : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
     }
 
+    public void Stop()
+    {
+        body.velocity = Vector3.zero;
+    }
+
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
@@ -55,40 +60,8 @@ public class PlayerControllerLobby : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Enter" && startGame)
-        {
-            Debug.Log("Enter");
-            canvas.SetActive(true);
-            
-            startGame = false;
-        }
-        else if(other.gameObject.tag == "questMan"){
-            Debug.Log("Quest od typa");
-        }
-        
-    }
 
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "GameOne")
-        {
-            SceneManager.LoadScene("FirstGame");
-        }
-        else if (other.gameObject.tag == "GameTwo")
-        {
-            SceneManager.LoadScene("SecondGame");
-        }
-        else if (other.gameObject.tag == "GameThree")
-        {
-            SceneManager.LoadScene("ThirdGame");
-        }
-        else if (other.gameObject.tag == "GameFour")
-        {
-            SceneManager.LoadScene("FourthGame");
-        }
-    }
+    
 
     private void Flip()
 	{
