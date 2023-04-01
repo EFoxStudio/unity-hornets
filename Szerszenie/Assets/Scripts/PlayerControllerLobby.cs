@@ -8,8 +8,11 @@ public class PlayerControllerLobby : MonoBehaviour
 {
     Rigidbody2D body;
 
+    public GameObject canvas;
+
     float horizontal;
     float vertical;
+    bool startGame = true;
     public Animator animator;
     private bool m_FacingRight = true;
 
@@ -44,13 +47,25 @@ public class PlayerControllerLobby : MonoBehaviour
     private void FixedUpdate()
     {
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+
+        if(vertical > 0){
+            animator.SetBool("isUp", true);
+        }else{
+            animator.SetBool("isUp", false);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enter")
+        if (other.gameObject.tag == "Enter" && startGame)
         {
             Debug.Log("Enter");
+            canvas.SetActive(true);
+            
+            startGame = false;
+        }
+        else if(other.gameObject.tag == "questMan"){
+            Debug.Log("Quest od typa");
         }
         
     }
