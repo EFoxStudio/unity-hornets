@@ -7,6 +7,7 @@ public class Invader : MonoBehaviour
     public SpriteRenderer spriteRenderer { get; private set; }
     public Sprite[] animationSprites = new Sprite[0];
     public float animationTime = 1f;
+    public System.Action killed;
     public int animationFrame { get; private set; }
 
     private void Awake()
@@ -30,6 +31,13 @@ public class Invader : MonoBehaviour
         }
 
         spriteRenderer.sprite = animationSprites[animationFrame];
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Missile"))
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame

@@ -889,6 +889,7 @@ MonoBehaviour:
   - {fileID: 1042838718}
   rows: 3
   columns: 3
+  speed: 0.5
 --- !u!4 &1697320799
 Transform:
   m_ObjectHideFlags: 0

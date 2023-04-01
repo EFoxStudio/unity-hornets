@@ -36,24 +36,20 @@ public class Player : MonoBehaviour
 
     private void Shoot()
     {
-        Instantiate(laserPrefab, transform.position, Quaternion.identity);
+        // Only one laser can be active at a given time so first check that
+        // there is not already an active laser
+        if (!laserActive)
+        {
+            laserActive = true;
+
+            Projectile laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
+            laser.destroyed += OnLaserDestroyed;
+        }
     }
 
-    private void OnLaserDestroyed(Projectile laser)
+    private void OnLaserDestroyed()
     {
         laserActive = false;
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Missile") ||
-            other.gameObject.layer == LayerMask.NameToLayer("Invader"))
-        {
-            if (killed != null)
-            {
-                killed.Invoke();
-            }
-        }
     }
 
 }
